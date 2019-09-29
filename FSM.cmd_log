@@ -1,0 +1,35 @@
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/FSM.xst" -ofn "D:/Projects/TrafficLightSystem/FSM.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/FSM.xst" -ofn "D:/Projects/TrafficLightSystem/FSM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 FSM.ngc FSM.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o FSM_map.ncd FSM.ngd FSM.pcf 
+par -w -intstyle ise -ol high -t 1 FSM_map.ncd FSM.ncd FSM.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml FSM.twx FSM.ncd -o FSM.twr FSM.pcf 
+bitgen -intstyle ise -f FSM.ut FSM.ncd 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/FSM.xst" -ofn "D:/Projects/TrafficLightSystem/FSM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 FSM.ngc FSM.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o FSM_map.ncd FSM.ngd FSM.pcf 
+par -w -intstyle ise -ol high -t 1 FSM_map.ncd FSM.ncd FSM.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml FSM.twx FSM.ncd -o FSM.twr FSM.pcf 
+bitgen -intstyle ise -f FSM.ut FSM.ncd 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/FSM.xst" -ofn "D:/Projects/TrafficLightSystem/FSM.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/FSM.xst" -ofn "D:/Projects/TrafficLightSystem/FSM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 FSM.ngc FSM.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o FSM_map.ncd FSM.ngd FSM.pcf 
+par -w -intstyle ise -ol high -t 1 FSM_map.ncd FSM.ncd FSM.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml FSM.twx FSM.ncd -o FSM.twr FSM.pcf 
+bitgen -intstyle ise -f FSM.ut FSM.ncd 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/FSM.xst" -ofn "D:/Projects/TrafficLightSystem/FSM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 FSM.ngc FSM.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o FSM_map.ncd FSM.ngd FSM.pcf 
+par -w -intstyle ise -ol high -t 1 FSM_map.ncd FSM.ncd FSM.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml FSM.twx FSM.ncd -o FSM.twr FSM.pcf 
+bitgen -intstyle ise -f FSM.ut FSM.ncd 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/FSM.xst" -ofn "D:/Projects/TrafficLightSystem/FSM.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/FSM.xst" -ofn "D:/Projects/TrafficLightSystem/FSM.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/FSM.xst" -ofn "D:/Projects/TrafficLightSystem/FSM.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/FSM.xst" -ofn "D:/Projects/TrafficLightSystem/FSM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 FSM.ngc FSM.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o FSM_map.ncd FSM.ngd FSM.pcf 
+par -w -intstyle ise -ol high -t 1 FSM_map.ncd FSM.ncd FSM.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml FSM.twx FSM.ncd -o FSM.twr FSM.pcf 
+bitgen -intstyle ise -f FSM.ut FSM.ncd 

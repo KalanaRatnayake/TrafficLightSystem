@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Projects\TrafficLightSystem\divider.ncd
+OUTFILE=D:\Projects\TrafficLightSystem\divider.bit
+FAMILY=Spartan3
+PART=xc3s50-5pq208
+WORKINGDIR=D:\Projects\TrafficLightSystem
+LICENSE=WebPack
+USER_INFO=210673530_0_0_679

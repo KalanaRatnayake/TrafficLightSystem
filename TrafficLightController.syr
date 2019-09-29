@@ -1,0 +1,536 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: TrafficLightController.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TrafficLightController.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TrafficLightController"
+Output Format                      : NGC
+Target Device                      : xc3s50-5-pq208
+
+---- Source Options
+Top Module Name                    : TrafficLightController
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "walk_register.v" in library work
+Compiling verilog file "time_parameters.v" in library work
+Module <walk_register> compiled
+Compiling verilog file "timer.v" in library work
+Module <time_parameters> compiled
+Compiling verilog file "synchronizer.v" in library work
+Module <timer> compiled
+Compiling verilog file "FSM.v" in library work
+Module <synchronizer> compiled
+Compiling verilog file "divider.v" in library work
+Module <FSM> compiled
+Compiling verilog file "TrafficLightController.v" in library work
+Module <divider> compiled
+Module <TrafficLightController> compiled
+No errors in compilation
+Analysis of file <"TrafficLightController.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <TrafficLightController> in library <work>.
+
+Analyzing hierarchy for module <FSM> in library <work> with parameters.
+	S0 = "000"
+	S1 = "001"
+	S2 = "010"
+	S3 = "011"
+	S4 = "100"
+	S5 = "101"
+	S6 = "110"
+	S7 = "111"
+
+Analyzing hierarchy for module <divider> in library <work>.
+
+Analyzing hierarchy for module <synchronizer> in library <work>.
+
+Analyzing hierarchy for module <time_parameters> in library <work>.
+
+Analyzing hierarchy for module <timer> in library <work>.
+
+Analyzing hierarchy for module <walk_register> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <TrafficLightController>.
+Module <TrafficLightController> is correct for synthesis.
+ 
+Analyzing module <FSM> in library <work>.
+	S0 = 3'b000
+	S1 = 3'b001
+	S2 = 3'b010
+	S3 = 3'b011
+	S4 = 3'b100
+	S5 = 3'b101
+	S6 = 3'b110
+	S7 = 3'b111
+Module <FSM> is correct for synthesis.
+ 
+Analyzing module <divider> in library <work>.
+Module <divider> is correct for synthesis.
+ 
+Analyzing module <synchronizer> in library <work>.
+Module <synchronizer> is correct for synthesis.
+ 
+Analyzing module <time_parameters> in library <work>.
+Module <time_parameters> is correct for synthesis.
+ 
+Analyzing module <timer> in library <work>.
+Module <timer> is correct for synthesis.
+ 
+Analyzing module <walk_register> in library <work>.
+Module <walk_register> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <FSM>.
+    Related source file is "FSM.v".
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <present_state> of Case statement line 61 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <present_state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Using one-hot encoding for signal <present_state>.
+    Found 1-bit register for signal <start_timer>.
+    Found 8-bit register for signal <present_state>.
+    Summary:
+	inferred   9 D-type flip-flop(s).
+Unit <FSM> synthesized.
+
+
+Synthesizing Unit <divider>.
+    Related source file is "divider.v".
+    Found 1-bit register for signal <enable_1Hz>.
+    Found 5-bit down counter for signal <counter>.
+    Found 5-bit subtractor for signal <old_counter_1$sub0000> created at line 37.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <divider> synthesized.
+
+
+Synthesizing Unit <synchronizer>.
+    Related source file is "synchronizer.v".
+    Found 1-bit register for signal <reset_sync_global>.
+    Found 1-bit register for signal <wr_sync>.
+    Found 1-bit register for signal <prog_sync>.
+    Found 1-bit register for signal <sensor_sync>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <synchronizer> synthesized.
+
+
+Synthesizing Unit <time_parameters>.
+    Related source file is "time_parameters.v".
+    Found 4-bit register for signal <value>.
+    Found 4-bit register for signal <t_base>.
+    Found 4-bit register for signal <t_ext>.
+    Found 4-bit register for signal <t_yel>.
+    Found 4-bit 4-to-1 multiplexer for signal <value$mux0000> created at line 34.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <time_parameters> synthesized.
+
+
+Synthesizing Unit <timer>.
+    Related source file is "timer.v".
+    Found 1-bit register for signal <expired>.
+    Found 4-bit register for signal <counter>.
+    Found 4-bit subtractor for signal <counter$addsub0000> created at line 51.
+    Found 1-bit register for signal <once>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <timer> synthesized.
+
+
+Synthesizing Unit <walk_register>.
+    Related source file is "walk_register.v".
+WARNING:Xst:2474 - Clock and clock enable of register <wr> are driven by the same logic. The clock enable is removed.
+    Found 1-bit register for signal <wr>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <walk_register> synthesized.
+
+
+Synthesizing Unit <TrafficLightController>.
+    Related source file is "TrafficLightController.v".
+Unit <TrafficLightController> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit subtractor                                      : 1
+ 5-bit subtractor                                      : 1
+# Counters                                             : 1
+ 5-bit down counter                                    : 1
+# Registers                                            : 15
+ 1-bit register                                        : 9
+ 4-bit register                                        : 5
+ 8-bit register                                        : 1
+# Multiplexers                                         : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1426 - The value init of the FF/Latch once hinder the constant cleaning in the block timer_unit.
+   You should achieve better results by setting this init to 1.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit subtractor                                      : 1
+ 5-bit subtractor                                      : 1
+# Counters                                             : 1
+ 5-bit down counter                                    : 1
+# Registers                                            : 33
+ Flip-Flops                                            : 33
+# Multiplexers                                         : 4
+ 1-bit 4-to-1 multiplexer                              : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch once hinder the constant cleaning in the block timer.
+   You should achieve better results by setting this init to 1.
+
+Optimizing unit <TrafficLightController> ...
+
+Optimizing unit <FSM> ...
+
+Optimizing unit <synchronizer> ...
+
+Optimizing unit <time_parameters> ...
+
+Optimizing unit <timer> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TrafficLightController, actual ratio is 4.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 42
+ Flip-Flops                                            : 42
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : TrafficLightController.ngr
+Top Level Output File Name         : TrafficLightController
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 18
+
+Cell Usage :
+# BELS                             : 68
+#      INV                         : 6
+#      LUT2                        : 14
+#      LUT2_L                      : 3
+#      LUT3                        : 25
+#      LUT3_D                      : 1
+#      LUT3_L                      : 2
+#      LUT4                        : 9
+#      LUT4_D                      : 1
+#      LUT4_L                      : 1
+#      MUXF5                       : 5
+#      VCC                         : 1
+# FlipFlops/Latches                : 42
+#      FD                          : 4
+#      FDC                         : 4
+#      FDCPE                       : 4
+#      FDE                         : 16
+#      FDP                         : 2
+#      FDR                         : 4
+#      FDRE                        : 7
+#      FDSE                        : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 17
+#      IBUF                        : 10
+#      OBUF                        : 7
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50pq208-5 
+
+ Number of Slices:                       33  out of    768     4%  
+ Number of Slice Flip Flops:             42  out of   1536     2%  
+ Number of 4 input LUTs:                 62  out of   1536     4%  
+ Number of IOs:                          18
+ Number of bonded IOBs:                  18  out of    124    14%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+----------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)      | Load  |
+-----------------------------------+----------------------------+-------+
+clock                              | BUFGP                      | 41    |
+synchronizer_unit/wr_sync          | NONE(walk_register_unit/wr)| 1     |
+-----------------------------------+----------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+--------------------------------------------------------------------------+-----------------------------+-------+
+Control Signal                                                            | Buffer(FF name)             | Load  |
+--------------------------------------------------------------------------+-----------------------------+-------+
+synchronizer_unit/reset_sync_global(synchronizer_unit/reset_sync_global:Q)| NONE(divider_unit/counter_0)| 5     |
+fsm_unit/present_state_4(fsm_unit/present_state_4:Q)                      | NONE(walk_register_unit/wr) | 1     |
+timer_unit/counter_0__and0000(timer_unit/counter_0__and00001:O)           | NONE(timer_unit/counter_0)  | 1     |
+timer_unit/counter_0__and0001(timer_unit/counter_0__and00011:O)           | NONE(timer_unit/counter_0)  | 1     |
+timer_unit/counter_1__and0000(timer_unit/counter_1__and00001:O)           | NONE(timer_unit/counter_1)  | 1     |
+timer_unit/counter_1__and0001(timer_unit/counter_1__and00011:O)           | NONE(timer_unit/counter_1)  | 1     |
+timer_unit/counter_2__and0000(timer_unit/counter_2__and00001:O)           | NONE(timer_unit/counter_2)  | 1     |
+timer_unit/counter_2__and0001(timer_unit/counter_2__and00011:O)           | NONE(timer_unit/counter_2)  | 1     |
+timer_unit/counter_3__and0000(timer_unit/counter_3__and00001:O)           | NONE(timer_unit/counter_3)  | 1     |
+timer_unit/counter_3__and0001(timer_unit/counter_3__and00011:O)           | NONE(timer_unit/counter_3)  | 1     |
+--------------------------------------------------------------------------+-----------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 4.766ns (Maximum Frequency: 209.804MHz)
+   Minimum input arrival time before clock: 3.563ns
+   Maximum output required time after clock: 8.083ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 4.766ns (frequency: 209.804MHz)
+  Total number of paths / destination ports: 207 / 60
+-------------------------------------------------------------------------
+Delay:               4.766ns (Levels of Logic = 2)
+  Source:            timer_unit/counter_3 (FF)
+  Destination:       timer_unit/counter_3 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: timer_unit/counter_3 to timer_unit/counter_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCPE:C->Q            2   0.626   1.040  timer_unit/counter_3 (timer_unit/counter_3)
+     LUT4_D:I0->O          4   0.479   0.838  timer_unit/expired_cmp_eq00001 (timer_unit/expired_cmp_eq0000)
+     LUT3:I2->O            4   0.479   0.779  timer_unit/counter_not00011 (timer_unit/counter_not0001)
+     FDCPE:CE                  0.524          timer_unit/counter_3
+    ----------------------------------------
+    Total                      4.766ns (2.108ns logic, 2.658ns route)
+                                       (44.2% logic, 55.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 40 / 28
+-------------------------------------------------------------------------
+Offset:              3.563ns (Levels of Logic = 2)
+  Source:            time_parameter_selector<0> (PAD)
+  Destination:       time_parameters_unit/t_yel_3 (FF)
+  Destination Clock: clock rising
+
+  Data Path: time_parameter_selector<0> to time_parameters_unit/t_yel_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.715   1.066  time_parameter_selector_0_IBUF (time_parameter_selector_0_IBUF)
+     LUT3:I0->O            4   0.479   0.779  time_parameters_unit/t_yel_not00011 (time_parameters_unit/t_yel_not0001)
+     FDE:CE                    0.524          time_parameters_unit/t_yel_0
+    ----------------------------------------
+    Total                      3.563ns (1.718ns logic, 1.845ns route)
+                                       (48.2% logic, 51.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 17 / 7
+-------------------------------------------------------------------------
+Offset:              8.083ns (Levels of Logic = 3)
+  Source:            fsm_unit/present_state_1 (FF)
+  Destination:       led<3> (PAD)
+  Source Clock:      clock rising
+
+  Data Path: fsm_unit/present_state_1 to led<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.626   1.074  fsm_unit/present_state_1 (fsm_unit/present_state_1)
+     LUT4:I0->O            1   0.479   0.000  fsm_unit/led<3>1 (fsm_unit/led<3>)
+     MUXF5:I0->O           1   0.314   0.681  fsm_unit/led<3>_f5 (led_3_OBUF)
+     OBUF:I->O                 4.909          led_3_OBUF (led<3>)
+    ----------------------------------------
+    Total                      8.083ns (6.328ns logic, 1.755ns route)
+                                       (78.3% logic, 21.7% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.30 secs
+ 
+--> 
+
+Total memory usage is 4536456 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

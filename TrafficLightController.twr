@@ -1,0 +1,93 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 5
+-n 3 -fastpaths -xml TrafficLightController.twx TrafficLightController.ncd -o
+TrafficLightController.twr TrafficLightController.pcf
+
+Design file:              TrafficLightController.ncd
+Physical constraint file: TrafficLightController.pcf
+Device,package,speed:     xc3s50,pq208,-5 (PRODUCTION 1.39 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clock
+--------------------------+------------+------------+------------------+--------+
+                          |Max Setup to|Max Hold to |                  | Clock  |
+Source                    | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+--------------------------+------------+------------+------------------+--------+
+reprogram                 |    1.123(R)|    0.377(R)|clock_BUFGP       |   0.000|
+reset                     |    0.991(R)|    0.466(R)|clock_BUFGP       |   0.000|
+sensor                    |    1.144(R)|    0.360(R)|clock_BUFGP       |   0.000|
+time_parameter_selector<0>|    1.729(R)|   -0.020(R)|clock_BUFGP       |   0.000|
+time_parameter_selector<1>|    2.178(R)|   -0.054(R)|clock_BUFGP       |   0.000|
+time_value<0>             |    0.452(R)|    0.644(R)|clock_BUFGP       |   0.000|
+time_value<1>             |    0.382(R)|    0.718(R)|clock_BUFGP       |   0.000|
+time_value<2>             |    0.691(R)|    0.909(R)|clock_BUFGP       |   0.000|
+time_value<3>             |    0.035(R)|    0.955(R)|clock_BUFGP       |   0.000|
+walk_request              |    0.828(R)|    0.609(R)|clock_BUFGP       |   0.000|
+--------------------------+------------+------------+------------------+--------+
+
+Clock clock to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+led<0>      |    8.140(R)|clock_BUFGP       |   0.000|
+led<1>      |    8.940(R)|clock_BUFGP       |   0.000|
+led<2>      |    7.821(R)|clock_BUFGP       |   0.000|
+led<3>      |    8.704(R)|clock_BUFGP       |   0.000|
+led<4>      |    8.857(R)|clock_BUFGP       |   0.000|
+led<5>      |    7.496(R)|clock_BUFGP       |   0.000|
+led<6>      |    9.461(R)|clock_BUFGP       |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |    3.485|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Mon Jul 01 00:02:53 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4487 MB
+
+
+

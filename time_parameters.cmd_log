@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/time_parameters.xst" -ofn "D:/Projects/TrafficLightSystem/time_parameters.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/time_parameters.xst" -ofn "D:/Projects/TrafficLightSystem/time_parameters.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 time_parameters.ngc time_parameters.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o time_parameters_map.ncd time_parameters.ngd time_parameters.pcf 
+par -w -intstyle ise -ol high -t 1 time_parameters_map.ncd time_parameters.ncd time_parameters.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml time_parameters.twx time_parameters.ncd -o time_parameters.twr time_parameters.pcf 
+bitgen -intstyle ise -f time_parameters.ut time_parameters.ncd 

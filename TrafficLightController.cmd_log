@@ -1,0 +1,48 @@
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 TrafficLightController.ngc TrafficLightController.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o TrafficLightController_map.ncd TrafficLightController.ngd TrafficLightController.pcf 
+par -w -intstyle ise -ol high -t 1 TrafficLightController_map.ncd TrafficLightController.ncd TrafficLightController.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml TrafficLightController.twx TrafficLightController.ncd -o TrafficLightController.twr TrafficLightController.pcf 
+bitgen -intstyle ise -f TrafficLightController.ut TrafficLightController.ncd 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 TrafficLightController.ngc TrafficLightController.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o TrafficLightController_map.ncd TrafficLightController.ngd TrafficLightController.pcf 
+par -w -intstyle ise -ol high -t 1 TrafficLightController_map.ncd TrafficLightController.ncd TrafficLightController.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml TrafficLightController.twx TrafficLightController.ncd -o TrafficLightController.twr TrafficLightController.pcf 
+bitgen -intstyle ise -f TrafficLightController.ut TrafficLightController.ncd 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 TrafficLightController.ngc TrafficLightController.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o TrafficLightController_map.ncd TrafficLightController.ngd TrafficLightController.pcf 
+par -w -intstyle ise -ol high -t 1 TrafficLightController_map.ncd TrafficLightController.ncd TrafficLightController.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml TrafficLightController.twx TrafficLightController.ncd -o TrafficLightController.twr TrafficLightController.pcf 
+bitgen -intstyle ise -f TrafficLightController.ut TrafficLightController.ncd 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 TrafficLightController.ngc TrafficLightController.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o TrafficLightController_map.ncd TrafficLightController.ngd TrafficLightController.pcf 
+par -w -intstyle ise -ol high -t 1 TrafficLightController_map.ncd TrafficLightController.ncd TrafficLightController.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml TrafficLightController.twx TrafficLightController.ncd -o TrafficLightController.twr TrafficLightController.pcf 
+bitgen -intstyle ise -f TrafficLightController.ut TrafficLightController.ncd 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 TrafficLightController.ngc TrafficLightController.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o TrafficLightController_map.ncd TrafficLightController.ngd TrafficLightController.pcf 
+par -w -intstyle ise -ol high -t 1 TrafficLightController_map.ncd TrafficLightController.ncd TrafficLightController.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml TrafficLightController.twx TrafficLightController.ncd -o TrafficLightController.twr TrafficLightController.pcf 
+bitgen -intstyle ise -f TrafficLightController.ut TrafficLightController.ncd 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 TrafficLightController.ngc TrafficLightController.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o TrafficLightController_map.ncd TrafficLightController.ngd TrafficLightController.pcf 
+par -w -intstyle ise -ol high -t 1 TrafficLightController_map.ncd TrafficLightController.ncd TrafficLightController.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml TrafficLightController.twx TrafficLightController.ncd -o TrafficLightController.twr TrafficLightController.pcf 
+bitgen -intstyle ise -f TrafficLightController.ut TrafficLightController.ncd 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/TrafficLightController.xst" -ofn "D:/Projects/TrafficLightSystem/TrafficLightController.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 TrafficLightController.ngc TrafficLightController.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o TrafficLightController_map.ncd TrafficLightController.ngd TrafficLightController.pcf 
+par -w -intstyle ise -ol high -t 1 TrafficLightController_map.ncd TrafficLightController.ncd TrafficLightController.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml TrafficLightController.twx TrafficLightController.ncd -o TrafficLightController.twr TrafficLightController.pcf 
+bitgen -intstyle ise -f TrafficLightController.ut TrafficLightController.ncd 

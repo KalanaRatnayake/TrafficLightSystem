@@ -1,0 +1,8 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Jul 01 00:02:45 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+NET "clock_BUFGP/IBUFG" BEL "clock_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+

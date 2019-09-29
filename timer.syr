@@ -1,0 +1,377 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: timer.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "timer.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "timer"
+Output Format                      : NGC
+Target Device                      : xc3s50-5-pq208
+
+---- Source Options
+Top Module Name                    : timer
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "timer.v" in library work
+Module <timer> compiled
+No errors in compilation
+Analysis of file <"timer.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <timer> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <timer>.
+Module <timer> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <timer>.
+    Related source file is "timer.v".
+    Found 1-bit register for signal <expired>.
+    Found 4-bit register for signal <counter>.
+    Found 4-bit subtractor for signal <counter$addsub0000> created at line 45.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <timer> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit subtractor                                      : 1
+# Registers                                            : 2
+ 1-bit register                                        : 1
+ 4-bit register                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit subtractor                                      : 1
+# Registers                                            : 1
+ Flip-Flops                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <timer> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block timer, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 5
+ Flip-Flops                                            : 5
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : timer.ngr
+Top Level Output File Name         : timer
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 9
+
+Cell Usage :
+# BELS                             : 33
+#      INV                         : 1
+#      LUT2                        : 9
+#      LUT3                        : 4
+#      LUT3_L                      : 2
+#      LUT4                        : 11
+#      LUT4_L                      : 1
+#      MUXF5                       : 5
+# FlipFlops/Latches                : 5
+#      FDCP                        : 4
+#      FDE                         : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 8
+#      IBUF                        : 7
+#      OBUF                        : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50pq208-5 
+
+ Number of Slices:                       14  out of    768     1%  
+ Number of Slice Flip Flops:              5  out of   1536     0%  
+ Number of 4 input LUTs:                 28  out of   1536     1%  
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    124     7%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clock                              | BUFGP                  | 5     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------+------------------------+-------+
+Control Signal                           | Buffer(FF name)        | Load  |
+-----------------------------------------+------------------------+-------+
+counter_0__and0000(counter_0__and00001:O)| NONE(counter_0)        | 1     |
+counter_0__and0001(counter_0__and00011:O)| NONE(counter_0)        | 1     |
+counter_1__and0000(counter_1__and00001:O)| NONE(counter_1)        | 1     |
+counter_1__and0001(counter_1__and00011:O)| NONE(counter_1)        | 1     |
+counter_2__and0000(counter_2__and00001:O)| NONE(counter_2)        | 1     |
+counter_2__and0001(counter_2__and00011:O)| NONE(counter_2)        | 1     |
+counter_3__and0000(counter_3__and00001:O)| NONE(counter_3)        | 1     |
+counter_3__and0001(counter_3__and00011:O)| NONE(counter_3)        | 1     |
+-----------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 4.137ns (Maximum Frequency: 241.721MHz)
+   Minimum input arrival time before clock: 4.406ns
+   Maximum output required time after clock: 6.216ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 4.137ns (frequency: 241.721MHz)
+  Total number of paths / destination ports: 19 / 5
+-------------------------------------------------------------------------
+Delay:               4.137ns (Levels of Logic = 3)
+  Source:            counter_0 (FF)
+  Destination:       expired (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: counter_0 to expired
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCP:C->Q             6   0.626   1.148  counter_0 (counter_0)
+     LUT4:I0->O            1   0.479   0.000  counter_cmp_eq00001_F (N31)
+     MUXF5:I0->O           2   0.314   0.915  counter_cmp_eq00001 (counter_cmp_eq0000)
+     LUT2:I1->O            1   0.479   0.000  expired_mux00001 (expired_mux0000)
+     FDE:D                     0.176          expired
+    ----------------------------------------
+    Total                      4.137ns (2.074ns logic, 2.063ns route)
+                                       (50.1% logic, 49.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 54 / 6
+-------------------------------------------------------------------------
+Offset:              4.406ns (Levels of Logic = 4)
+  Source:            start_timer (PAD)
+  Destination:       counter_0 (FF)
+  Destination Clock: clock rising
+
+  Data Path: start_timer to counter_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            11   0.715   1.267  start_timer_IBUF (start_timer_IBUF)
+     LUT4:I0->O            1   0.479   0.000  counter_mux0000<0>_SW1_G (N26)
+     MUXF5:I1->O           1   0.314   0.976  counter_mux0000<0>_SW1 (N5)
+     LUT3:I0->O            1   0.479   0.000  counter_mux0000<0> (counter_mux0000<0>)
+     FDCP:D                    0.176          counter_0
+    ----------------------------------------
+    Total                      4.406ns (2.163ns logic, 2.243ns route)
+                                       (49.1% logic, 50.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              6.216ns (Levels of Logic = 1)
+  Source:            expired (FF)
+  Destination:       expired (PAD)
+  Source Clock:      clock rising
+
+  Data Path: expired to expired
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.626   0.681  expired (expired_OBUF)
+     OBUF:I->O                 4.909          expired_OBUF (expired)
+    ----------------------------------------
+    Total                      6.216ns (5.535ns logic, 0.681ns route)
+                                       (89.0% logic, 11.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.27 secs
+ 
+--> 
+
+Total memory usage is 4520276 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

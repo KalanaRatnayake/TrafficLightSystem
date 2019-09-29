@@ -1,0 +1,7 @@
+verilog work "walk_register.v"
+verilog work "time_parameters.v"
+verilog work "timer.v"
+verilog work "synchronizer.v"
+verilog work "FSM.v"
+verilog work "divider.v"
+verilog work "TrafficLightController.v"

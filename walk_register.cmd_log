@@ -1,0 +1,8 @@
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/walk_register.xst" -ofn "D:/Projects/TrafficLightSystem/walk_register.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/walk_register.xst" -ofn "D:/Projects/TrafficLightSystem/walk_register.syr" 
+xst -intstyle ise -ifn "D:/Projects/TrafficLightSystem/walk_register.xst" -ofn "D:/Projects/TrafficLightSystem/walk_register.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50-pq208-5 walk_register.ngc walk_register.ngd  
+map -intstyle ise -p xc3s50-pq208-5 -cm area -ir off -pr off -c 100 -o walk_register_map.ncd walk_register.ngd walk_register.pcf 
+par -w -intstyle ise -ol high -t 1 walk_register_map.ncd walk_register.ncd walk_register.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml walk_register.twx walk_register.ncd -o walk_register.twr walk_register.pcf 
+bitgen -intstyle ise -f walk_register.ut walk_register.ncd 
